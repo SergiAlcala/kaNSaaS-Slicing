@@ -14,6 +14,8 @@ from results_json import get_3Dresults, get_results
 import shutil
 # from ortools.linear_solver import pywraplp
 import pickle
+import sys
+
 
 
 
@@ -762,10 +764,18 @@ class LDV:
 
 global colors_json
 
+try:
+    with open('./Color_code_synthetic.json','r') as f:
+            colors_json=json.loads(f.read())
+    plt.style.use('./Matplotlib/style.mplstyle')
 
-with open('./Color_code_synthetic.json','r') as f:
-           colors_json=json.loads(f.read())
+    
+except:
 
+    with open('./kaNSaaS-Slicing/Color_code_synthetic.json','r') as f:
+            colors_json=json.loads(f.read())
+            
+    plt.style.use('./kaNSaaS-Slicing/Matplotlib/style.mplstyle')
 
 
 
@@ -774,8 +784,8 @@ class plt_fcn:
         self.colors=colors_json
         
 
-    #### Matplotlib Style
-    plt.style.use('../Matplotlib/style.mplstyle')
+    ### Matplotlib Style
+    plt.style.use('./Matplotlib/style.mplstyle')
    
     
     ### Global functions
