@@ -1,6 +1,3 @@
-
-
-# %%
 import math
 import numpy as np
 from torch.utils.data import DataLoader
@@ -11,8 +8,6 @@ from validator import TESRNNValidator
 from tester import TESRNNTester
 from model import TESRNN
 from loss_modules import *
-import matplotlib.pyplot as plt
-import sys
 import os
 
 #### 1 week 10080
@@ -38,7 +33,7 @@ emBB_filenames = []
 mMTC_filenames = []
 uRLLC_filenames = []
 
-datapath='/home/user/Synthetic_Data'
+datapath='./kaNSaaS-Slicing/Capacity_Forecasting/Synthetic_data_noisy'
 
 for i in range(0, 7):
     if i != 6:
@@ -59,7 +54,7 @@ num_clusters = 1
 
 # List of alphas to be tested
 
-alphas = [0.75]
+alphas = [1.5]
 
 # Define the number of training epochs
 epochs = 30

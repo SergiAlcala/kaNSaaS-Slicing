@@ -13,8 +13,6 @@ from validator import TESRNNValidator
 from tester import TESRNNTester
 from model import TESRNN
 from loss_modules import *
-import matplotlib.pyplot as plt
-import sys
 import os
 
 #### 1 week 10080
@@ -40,7 +38,7 @@ emBB_filenames = []
 mMTC_filenames = []
 uRLLC_filenames = []
 
-datapath='/home/user/Synthetic_Data'
+datapath='./kaNSaaS-Slicing/Capacity_Forecasting/Synthetic_data_noisy'
 
 for i in range(0, 7):
     if i != 6:
@@ -109,8 +107,6 @@ num_runs = 1
 
 ####SHUFLE BATCHES
 shuffle_batch=False
-
-
 
 # Simulations over different services
 for service in services:
@@ -228,8 +224,6 @@ for service in services:
                         with open(file_path, 'a') as f:
                             f.write(','.join([str(iterations), str(val_loss)]) + '\n')
 
-
-
                     # Set denormalized validation loss for interval extreme
                     if (iterations%3) == 1:
                         f_c = val_loss
@@ -256,8 +250,6 @@ for service in services:
             tau = (tau_min + tau_max) / 2
             # print('\nFinally chosen threshold = %f\n' % tau)
             np.save('Results/' + run_id + '/optimal_tau.npy', tau)
-    
-
 
             # Run the optimized model
     
