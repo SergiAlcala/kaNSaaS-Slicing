@@ -7,6 +7,5 @@ numpy==1.22.3
 ortools==9.3.10497
 PySCIPOpt==4.2.0
 scipy==1.8.0
-slope==0.1.0
 sympy==1.9
 tqdm==4.62.3
